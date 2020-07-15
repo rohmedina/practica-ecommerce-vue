@@ -4,12 +4,13 @@
       <h1>Productos</h1>
     </div>
 
-    <div>
-      <div class="text-left pull-left">
-        <label for="">Buscar</label>
-        <input label="Buscar..." v-model="filtro" />
-        <b-button> <b-icon-arrow-right-circle-fill></b-icon-arrow-right-circle-fill> </b-button>
-      </div>
+    <div class="py-3">
+      <b-input-group size="md" class="mb-2">
+        <b-input-group-prepend is-text>
+          <b-icon icon="search"></b-icon>
+        </b-input-group-prepend>
+        <b-form-input type="search" placeholder="Buscar producto"></b-form-input>
+      </b-input-group>
 
       <div class="text-right pull-right">
         <span class="stats">
@@ -17,7 +18,7 @@
           <template v-if="cart.items.length == 1">item</template>
           <template v-else>productos</template>
           en el carro, subtotal {{ cartTotal | currency }}
-          <b-button class="btn btn-success" @click="isShowingCart = true" v-b-modal.modal-1> <b-icon-cart></b-icon-cart> {{ cart.items.length }} View Cart</b-button>
+          <b-button variant="success" @click="isShowingCart = true" v-b-modal.modal-1> <b-icon icon="cart"></b-icon> {{ cart.items.length }} View Cart</b-button>
         </span>
       </div>
     </div>
